@@ -1,4 +1,4 @@
-// import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback, useEffect } from "react"
 import axios from "axios"
 import { Sparkles, FileText, Send, CheckCircle2, AlertCircle, Loader2, UploadCloud, File, X, FileType2 } from "lucide-react"
 import { useDropzone } from "react-dropzone"
@@ -10,6 +10,9 @@ function App() {
   const [result, setResult] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+// Add this line temporarily inside App() function
+console.log("API URL:", import.meta.env.VITE_API_URL)
+
 
   // ✅ FIX: Ping backend on page load to wake it up
   useEffect(() => {

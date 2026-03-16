@@ -10,9 +10,12 @@ dotenv.config()
 
 const app = express()
 app.use(cors({
-  origin: [
-    "http://localhost:5173",                                    // local dev
-    "https://ai-resume-analyzer-gules-kappa.vercel.app"         // production
+   origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://192.168.1.37:5173",
+    "http://192.168.1.37:5174",        // ← your local network IP
+    "https://ai-resume-analyzer-gules-kappa.vercel.app"
   ]
 }))
 app.use(express.json())
