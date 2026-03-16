@@ -68,6 +68,12 @@ ${resumeText}
   return response.data.choices[0].message.content;
 };
 
+
+// Add this simple health check endpoint
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" })
+})
+
 // Original text-based endpoint
 app.post("/analyze", async (req, res) => {
   try {
