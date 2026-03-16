@@ -1,4 +1,3 @@
-import { createRequire } from "module"
 import pdfParse from "pdf-parse-fork"  
 
 import express from "express"
@@ -13,7 +12,7 @@ const app = express()
 app.use(cors({
   origin: [
     "http://localhost:5173",                                    // local dev
-    "https://ai-resume-analyzer-gules-kappa.vercel.app/"         // production
+    "https://ai-resume-analyzer-gules-kappa.vercel.app"         // production
   ]
 }))
 app.use(express.json())
