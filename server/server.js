@@ -15,7 +15,7 @@ app.use(cors({
     "http://localhost:5174",
     "http://192.168.1.37:5173",
     "http://192.168.1.37:5174",        // ← your local network IP
-    "https://anil-ai-resume-analyzer.vercel.app/"
+    "https://anil-ai-resume-analyzer.vercel.app"
   ]
 }))
 app.use(express.json())
