@@ -10,7 +10,12 @@ import multer from "multer"
 dotenv.config()
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: [
+    "http://localhost:5173",                                    // local dev
+    "https://ai-resume-analyzer-gules-kappa.vercel.app/"         // production
+  ]
+}))
 app.use(express.json())
 
 // Configure multer for PDF memory storage

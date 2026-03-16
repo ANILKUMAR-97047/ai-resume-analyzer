@@ -45,7 +45,7 @@ function App() {
 
       if (mode === "text") {
         response = await axios.post(
-          "http://localhost:5000/analyze",
+          `${import.meta.env.APP_API_URL}/analyze`,
           { resumeText: resume }
         )
       } else {
@@ -53,7 +53,7 @@ function App() {
         formData.append("pdfFile", pdfFile);
 
         response = await axios.post(
-          "http://localhost:5000/analyze-pdf",
+          `${import.meta.env.APP_API_URL}/analyze-pdf`,
           formData,
           {
             headers: {
