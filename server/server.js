@@ -16,6 +16,10 @@ app.use(cors({
   ]
 }))
 app.use(express.json())
+// Add this simple health check endpoint
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" })
+})
 
 // Configure multer for PDF memory storage
 const storage = multer.memoryStorage();
@@ -69,10 +73,7 @@ ${resumeText}
 };
 
 
-// Add this simple health check endpoint
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" })
-})
+
 
 // Original text-based endpoint
 app.post("/analyze", async (req, res) => {
